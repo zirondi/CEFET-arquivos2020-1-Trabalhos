@@ -23,9 +23,9 @@ class random_stuff():
 
         #cursos vars (deve ter alguma maneira de fazer isso mais bonito)
         self.curso_list = list()
-        for i in range(5):
+        for _i in range(5):
             temp_str = ''
-            for j in range(19):
+            for _j in range(19):
                 temp_str = temp_str + (random.choice(self.alphabet))
             self.curso_list.append(temp_str)
 
