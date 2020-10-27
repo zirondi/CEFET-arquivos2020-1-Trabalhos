@@ -70,10 +70,12 @@ ids = rnd.id_list
 cpfs = rnd.cpf_list
 
 f = open('./candidatos.dat', 'wb')
+g = open('./candidatos_extras.dat', 'wb')
 
 count = 0
 for i in range(0,30):
-    if count % 5 == 0:
+    if i % 3 != 0:
+        print('if')
         #Pegando a primeira mencao do cpf na lista
         candidate = [ids.pop(), 
         rnd.get_random_curso(), 
@@ -90,10 +92,11 @@ for i in range(0,30):
         candidate_duplicate = [ids.pop(index)]
         candidate_duplicate.extend(candidate[1:])
 
-        f.write(candidatoStruct.pack(*candidate_duplicate))
+        g.write(candidatoStruct.pack(*candidate_duplicate))
 
         count += 2
     else:
+
         candidate = [ids.pop(), 
         rnd.get_random_curso(), 
         rnd.format_cpf(cpfs.pop()), 
@@ -106,4 +109,23 @@ for i in range(0,30):
         count += 1
 
 
+
+
+f.close()
+g.close()
+
+
+#GAMBIARRA para os candidatos repetidos nao ficarem um atras do outro 
+
+f = open('./candidatos.dat', 'ab')
+g = open('./candidatos_extras.dat', 'rb')
+
+
+
+g_data = g.read()
+
+
+f.write(g_data)
+
+g.close()
 f.close()
