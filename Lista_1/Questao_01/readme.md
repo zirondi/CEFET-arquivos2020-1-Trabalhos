@@ -1,0 +1,1 @@
+Questao_01.py - Resolução da questão 1 da lista 1.
