@@ -1,8 +1,3 @@
-'''
-Quest˜ao 1 Escreva um programa na sua linguagem de programa¸c˜ao de preferˆencia que
-conte o n´umero de palavras e linhas de um arquivo texto, com o nome passado pelo
-argumento do comando de linha.
-'''
 import sys
 
 if len(sys.argv) != 2:
